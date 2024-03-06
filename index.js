@@ -8,7 +8,8 @@ const app = express();
 const port = 3000; // Puerto en el que correrá el servidor
 
 //cors
-app.use(cors());
+//app.use(cors());
+app.options("*", cors());
 
 // Configurar body-parser para manejar solicitudes JSON
 app.use(bodyParser.json());
@@ -44,5 +45,5 @@ app.post('/api/data', (req, res) => {
 
 // Iniciar el servidor
 app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port} con Cors habilitado.`);
+  console.log(`Servidor corriendo en http://localhost:${port} con Cors habilitado. como ellos`);
 });
