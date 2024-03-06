@@ -1,10 +1,14 @@
 // Importar las dependencias necesarias
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // Crear una instancia de Express
 const app = express();
 const port = 3000; // Puerto en el que correrá el servidor
+
+//cors
+app.use(cors());
 
 // Configurar body-parser para manejar solicitudes JSON
 app.use(bodyParser.json());
@@ -40,5 +44,5 @@ app.post('/api/data', (req, res) => {
 
 // Iniciar el servidor
 app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+  console.log(`Servidor corriendo en http://localhost:${port} con Cors habilitado.`);
 });
